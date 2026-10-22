@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abimbola Samuel — Frontend Developer building responsive websites.">
+  <title>Abimbola Samuel | Frontend Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+    <style>
+        :root {
+  --navy: #08172d;
+  --navy-light: #102747;
+  --blue: #247cff;
+  --blue-light: #4a94ff;
+  --text: #14243d;
+  --muted: #64738b;
+  --light: #f3f7fd;
+  --white: #ffffff;
+  --border: #e4ebf5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--white);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+header {
+  background: var(--navy);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  width: min(1120px, 92%);
+  min-height: 75px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--blue-light);
+  font-size: 25px;
+  margin-right: 8px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: var(--blue-light);
+}
+
+.nav-btn {
+  background: var(--blue);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 25px;
+}
+
+#menu {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Hero */
+.hero {
+  min-height: 460px;
+  padding: 45px max(4%, calc((100% - 1120px) / 2));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 35px;
+  color: white;
+  background:
+    radial-gradient(ellipse at 75% 75%, #164b91, transparent 40%),
+    linear-gradient(120deg, #071321, #0d2240);
+  overflow: hidden;
+}
+
+.hero-text {
+  max-width: 540px;
+}
+
+.tag {
+  display: inline-block;
+  background: #173f79;
+  padding: 4px 13px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 4.5vw, 57px);
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+  color: var(--blue-light);
+}
+
+.hero-text > p {
+  margin: 20px 0;
+  max-width: 480px;
+  color: #d1deef;
+  font-size: 15px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 19px;
+  border: 1px solid var(--blue);
+  border-radius: 10px;
+  background: var(--blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  background: #1266e7;
+  transform: translateY(-2px);
+}
+
+.outline {
+  background: transparent;
+  border-color: #8293ad;
+}
+
+.outline:hover {
+  background: #172b48;
+}
+
+.socials {
+  display: flex;
+  gap: 20px;
+  margin-top: 24px;
+  font-size: 22px;
+}
+
+.socials a:hover {
+  color: var(--blue-light);
+}
+
+.hero-image {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 390px;
+  height: 360px;
+  object-fit: contain;
+  object-position: bottom;
+  border-radius: 10px;
+}
+
+.image-note {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 130px;
+  color: #e3edff;
+  font-size: 15px;
+  font-style: italic;
+  transform: rotate(-7deg);
+}
+
+/* General sections */
+.section {
+  padding: 75px max(4%, calc((100% - 1120px) / 2));
+}
+
+.small-title {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 1.25;
+  margin: 8px 0 15px;
+  letter-spacing: -0.7px;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 0.8fr 1.7fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.about-image {
+  max-width: 280px;
+  width: 100%;
+  height: 280px;
+  background: #dce9fc;
+  border-radius: 13px;
+  overflow: hidden;
+  box-shadow: -12px 12px 0 #438bff;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.about-text > p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+}
+.details > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.details i {
+  color: var(--blue);
+  background: #e7f0ff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.details p {
+  color: var(--muted);
+}
+
+.details strong {
+  color: var(--text);
+}
+
+/* Skills */
+.skills,
+.projects {
+  background: var(--light);
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.section-heading > p:last-child {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 12px;
+}
+
+.skill {
+  min-height: 105px;
+  padding: 15px 5px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  transition: 0.25s;
+}
+
+.skill:hover,
+.service-card:hover,
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px #10274712;
+}
+
+.skill i {
+  font-size: 32px;
+}
+
+.skill p {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.html { color: #e95825; }
+.css { color: #1685d9; }
+.js { color: #d6a900; }
+.blue { color: #247cff; }
+.purple { color: #7758ed; }
+.green { color: #16ad72; }
+.dark { color: #172033; }
+
+/* Services */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.service-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 23px;
+  transition: 0.25s;
+}
+
+.service-card > i {
+  font-size: 23px;
+  color: var(--blue);
+  background: #e7f0ff;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  margin-bottom: 15px;
+}
+
+.service-card h3,
+.project-info h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.service-card p,
+.project-info p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.project-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: 0.25s;
+}
+
+.project-image {
+  height: 165px;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 50px;
+}
+
+
+.project-image brandit {
+ width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0d2a4b, #1252a6);
+}
+
+.project-image portfolio {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1252a6, #4294ff);
+}
+
+.project-image hotel {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #29463d, #8fa494);
+}
+
+.project-info {
+  padding: 20px;
+}
+
+.project-info a {
+  display: inline-block;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+/* Contact */
+.contact {
+  background: linear-gradient(120deg, #07162b, #102847);
+  color: white;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 55px;
+}
+
+.contact-info > p {
+  color: #c2cfe1;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 18px;
+  font-size: 12px;
+  color: #d4dfef;
+}
+
+.contact-link i {
+  background: var(--blue);
+  padding: 13px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.contact-link strong {
+  color: white;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.contact-form label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px;
+  margin-bottom: 7px;
+  border: 1px solid #3d526e;
+  border-radius: 7px;
+  outline: none;
+  color: white;
+  background: #142943;
+  font-size: 12px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--blue-light);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #a5b6cc;
+}
+
+.contact-form small {
+  color: #b4c4d9;
+  font-size: 10px;
+}
+
+/* Footer */
+footer {
+  background: #061224;
+  color: white;
+  padding: 25px 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-size: 11px;
+}
+
+footer p,
+footer > a:last-child {
+  color: #bac8dc;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .nav-links {
+    gap: 13px;
+  }
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .about {
+    gap: 35px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  .navbar {
+    min-height: 68px;
+    position: relative;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: -4.35%;
+    width: 108.7%;
+    padding: 25px 5%;
+    background: var(--navy);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 17px;
+  }
+
+  #menu:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 50px;
+    gap: 10px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-image {
+    min-height: 280px;
+  }
+
+  .hero-image img {
+    height: 280px;
+  }
+
+  .image-note {
+    right: 2%;
+  }
+
+  .section {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .about-image {
+    width: 230px;
+    height: 250px;
+    margin: auto;
+  }
+
+  .details {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  footer {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 440px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .buttons .btn {
+    width: 100%;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .services-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image {
+    height: 190px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+    </style>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="#home" class="logo"><span>AS</span> Abimbola Samuel</a>
+
+      <input type="checkbox" id="menu">
+      <label for="menu" class="menu-icon">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="CV .pdf" target="_blank" class="btn btn-primary">View CV</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <span class="tag">Frontend Developer</span>
+        <h1>Hi, I'm <span>Abimbola Samuel</span></h1>
+        <p>
+          I build responsive and user-friendly websites using HTML,
+          CSS and JavaScript. I'm passionate about creating clean,
+          modern and accessible web experiences.
+        </p>
+
+        <div class="buttons">
+          <a href="#contact" class="btn">
+            <i class="fa-regular fa-envelope"></i> Get In Touch
+          </a>
+          <a href="https://github.com/Princesamdayo/Project"
+             class="btn outline" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i> View My GitHub
+          </a>
+        </div>
+
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/abimbola-samuel-398966297/" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/Princesamdayo/Project" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://x.com/" aria-label="X">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <!-- Put your picture in images/profile.jpg -->
+         <div class="about-image">
+        <img src="sam.jpg" alt="Abimbola Samuel">
+      </div>
+        
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about section" id="about">
+      <div class="about-image">
+        <img src="sam.jpg" alt="Abimbola Samuel">
+      </div>
+
+      <div class="about-text">
+        <span class="small-title">GET TO KNOW ME</span>
+        <h2>About Me</h2>
+        <p>
+          I'm Abimbola Samuel, a frontend developer based in Nigeria.
+          I enjoy building responsive websites with clean code,
+          modern designs and a focus on user experience.
+          I'm open to freelance projects and junior opportunities.
+        </p>
+
+        <div class="details">
+          <div>
+            <i class="fa-solid fa-location-dot"></i>
+            <p><strong>Location</strong><br>Nigeria</p>
+          </div>
+          <div>
+            <i class="fa-solid fa-laptop-code"></i>
+            <p><strong>Availability</strong><br>Open to opportunities</p>
+          </div>
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <p><strong>Experience</strong><br>Junior Developer</p>
+          </div>
+        </div>
+
+        <a href="#skills" class="btn">Explore My Skills</a>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="skills section" id="skills">
+      <div class="section-heading">
+        <span class="small-title">MY TECHNICAL TOOLKIT</span>
+        <h2>My Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill"><i class="fa-brands fa-html5 html"></i><p>HTML5</p></div>
+        <div class="skill"><i class="fa-brands fa-css3-alt css"></i><p>CSS3</p></div>
+        <div class="skill"><i class="fa-brands fa-js js"></i><p>JavaScript</p></div>
+        <div class="skill"><i class="fa-solid fa-mobile-screen blue"></i><p>Responsive Design</p></div>
+        <div class="skill"><i class="fa-solid fa-table-cells purple"></i><p>Flexbox</p></div>
+        <div class="skill"><i class="fa-solid fa-grip green"></i><p>CSS Grid</p></div>
+        <div class="skill"><i class="fa-solid fa-universal-access blue"></i><p>Accessibility</p></div>
+        <div class="skill"><i class="fa-brands fa-github dark"></i><p>Git & GitHub</p></div>
+        <div class="skill"><i class="fa-solid fa-cloud-arrow-up purple"></i><p>Deployment</p></div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services section" id="services">
+      <div class="section-heading">
+        <span class="small-title">WHAT I CAN DO</span>
+        <h2>My Services</h2>
+        <p>I help individuals and businesses establish a professional online presence.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <i class="fa-solid fa-window-maximize"></i>
+          <h3>Landing Pages</h3>
+          <p>Modern landing pages for products, services and campaigns.</p>
+        </article>
+
+        <article class="service-card">
+          <i class="fa-solid fa-building"></i>
+          <h3>Business Websites</h3>
+          <p>Professional websites for small businesses and brands.</p>
+        </article>
+
+        <article class="service-card">
+          <i class="fa-regular fa-id-card"></i>
+          <h3>Portfolio Websites</h3>
+          <p>Websites that showcase skills, projects and experience.</p>
+        </article>
+
+        <article class="service-card">
+          <i class="fa-solid fa-mobile-screen"></i>
+          <h3>Responsive Redesigns</h3>
+          <p>Improve how existing websites look on phones and computers.</p>
+        </article>
+
+        <article class="service-card">
+          <i class="fa-solid fa-code"></i>
+          <h3>HTML/CSS Fixes</h3>
+          <p>Fix layout, styling and responsive design issues.</p>
+        </article>
+
+        <article class="service-card">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <h3>Website Deployment</h3>
+          <p>Publish websites online so visitors can access them.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects section" id="projects">
+      <div class="section-heading">
+        <span class="small-title">MY RECENT WORK</span>
+        <h2>My Projects</h2>
+        <p>A selection of projects I've worked on and developed my skills through.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-image brandit">
+            <img src="brandit.png" alt="" width="100%" height="100%">
+          </div>
+          <div class="project-info">
+            <h3>BrandIt Concept Website</h3>
+            <p>A responsive multi-page website concept built with HTML, CSS and JavaScript.</p>
+            <a href="https://github.com/Princesamdayo/Project" target="_blank" rel="noopener">
+              View Code <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image portfolio">
+            <img src="port.jpg" alt="" width="100%" height="100%">
+          </div>
+          <div class="project-info">
+            <h3>Personal Portfolio</h3>
+            <p>A website introducing my skills, services and frontend development work.</p>
+            <a href="https://page-9d1p.onrender.com/" target="_blank" rel="noopener">
+              Live Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image hotel">
+            <img src="hotel.jpg" alt="" width="100%" height="100%">
+          </div>
+          <div class="project-info">
+            <h3>Hotel Website Concept</h3>
+            <p>A hospitality website concept focused on clear information and usability.</p>
+            <a href="https://github.com/Princesamdayo/Project" target="_blank" rel="noopener">
+              View Code <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact section" id="contact">
+      <div class="contact-info">
+        <span class="small-title">LET'S CONNECT</span>
+        <h2>Get In Touch</h2>
+        <p>Have a project or opportunity in mind? Feel free to contact me.</p>
+
+        <a href="mailto:princesamdayo@gmail.com" class="contact-link">
+          <i class="fa-regular fa-envelope"></i>
+          <span><strong>Email</strong><br>princesamdayo@gmail.com</span>
+        </a>
+
+        <div class="contact-link">
+          <i class="fa-solid fa-location-dot"></i>
+          <span><strong>Location</strong><br>Nigeria · Open to remote work</span>
+        </div>
+      </div>
+
+      <form class="contact-form" action="mailto:princesamdayo@gmail.com"
+            method="post" enctype="text/plain">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5"
+                  placeholder="Tell me about your project..." required></textarea>
+
+        <button type="submit" class="btn">
+          <i class="fa-regular fa-paper-plane"></i> Send Message
+        </button>
+        <small>This form opens your email app; it does not send messages directly from a server.</small>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#home" class="logo"><span>AS</span> Abimbola Samuel</a>
+    <p>© 2026 Abimbola Samuel. All rights reserved.</p>
+    <a href="#home"><i class="fa-solid fa-arrow-up"></i> Back to top</a>
+  </footer>
+
+</body>
+</html>
